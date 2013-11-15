@@ -23,12 +23,12 @@
 
 <template name="search">
   <tr>
-    <td><input id="name" class="form-control" type="text"></td>
-    <td><input id="category" class="form-control" type="text"></td>
-    <td><input id="notes" class="form-control" type="text"></td>
-    <td><input id="nextService" class="form-control" type="text"></td>
-    <td><input id="location" class="form-control" type="text"></td>
-    <td class="col-sm-1"><input id="count" class="form-control" type="text"></td>
+    <td><input id="name" value="{{session 'name'}}" class="form-control" type="text"></td>
+    <td><input id="category" value="{{session 'category'}}" class="form-control" type="text"></td>
+    <td><input id="notes" value="{{session 'notes'}}" class="form-control" type="text"></td>
+    <td><input id="nextService" value="{{session 'nextService'}}" class="form-control" type="text"></td>
+    <td><input id="location" value="{{session 'location'}}" class="form-control" type="text"></td>
+    <td class="col-sm-1"><input value="{{session 'count'}}" id="count" class="form-control" type="text"></td>
   </tr>
 </template>
 
