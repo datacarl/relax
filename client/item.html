@@ -1,0 +1,31 @@
+<template name="item">
+<form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-10">
+        <input id="name" class="form-control" value="{{item.name}}" type="text">
+      </div>
+      <label class="col-sm-2 control-label">Category</label>
+      <div class="col-sm-10">
+        <input id="category" class="form-control" value="{{item.category}}" type="text">
+      </div>
+      <label class="col-sm-2 control-label">Notes</label>
+      <div class="col-sm-10">
+        <input id="notes" class="form-control" value="{{item.notes}}" type="text">
+      </div>
+      <label class="col-sm-2 control-label">Location</label>
+      <div class="col-sm-10">
+        <input id="location" class="form-control" value="{{item.location}}" type="text">
+      </div>
+      <label class="col-sm-2 control-label">Count</label>
+      <div class="col-sm-2">
+        <input id="count" class="form-control" value="{{item.count}}" type="number">
+      </div>
+      <label class="col-sm-2 control-label">Next Service</label>
+      <div class="col-sm-2">
+        <input id="nextService" class="form-control" value="{{item.nextService}}" type="date">
+      </div>
+      <button type="submit" class="btn btn-primary pull-right">Save</button>
+    </div>
+  </form>
+</template>

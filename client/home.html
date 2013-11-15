@@ -1,0 +1,44 @@
+<template name="home">
+  <a href="{{ pathFor 'new' }}" class="btn btn-primary">New item</a>
+  <table class="table table-responsive table-striped table-hover">
+    <thead>
+      <tr>
+        <th id="name">Name</th>
+        <th id="category">Category</th>
+        <th id="notes">Notes</th>
+        <th id="nextService">Next Service</th>
+        <th id="location">Location</th>
+        <th id="count" class="col-sm-1">Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{> search}}
+      {{#each items}}
+        {{> itemListItem}}
+      {{/each}}
+    </tbody>
+  </table>
+  <a href="{{ pathFor 'new' }}" class="btn btn-primary">New item</a>
+</template>
+
+<template name="search">
+  <tr>
+    <td><input id="name" class="form-control" type="text"></td>
+    <td><input id="category" class="form-control" type="text"></td>
+    <td><input id="notes" class="form-control" type="text"></td>
+    <td><input id="nextService" class="form-control" type="text"></td>
+    <td><input id="location" class="form-control" type="text"></td>
+    <td class="col-sm-1"><input id="count" class="form-control" type="text"></td>
+  </tr>
+</template>
+
+<template name="itemListItem">
+  <tr>
+    <td>{{name}}</td>
+    <td>{{category}}</td>
+    <td>{{notes}}</td>
+    <td>{{nextService}}</td>
+    <td>{{location}}</td>
+    <td>{{count}}</td>
+  </tr>
+</template>
