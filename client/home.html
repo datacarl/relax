@@ -8,7 +8,8 @@
         <th id="notes">Notes</th>
         <th id="nextService">Next Service</th>
         <th id="location">Location</th>
-        <th id="count" class="col-sm-1">Count</th>
+        <th id="count">Count</th>
+        <th id="todos">Todos</th>
       </tr>
     </thead>
     <tbody>
@@ -28,7 +29,8 @@
     <td><input id="notes" value="{{session 'notes'}}" class="form-control" type="text"></td>
     <td><input id="nextService" value="{{session 'nextService'}}" class="form-control" type="text"></td>
     <td><input id="location" value="{{session 'location'}}" class="form-control" type="text"></td>
-    <td class="col-sm-1"><input value="{{session 'count'}}" id="count" class="form-control" type="text"></td>
+    <td class="col-sm-1"></td>
+    <td class="col-sm-1"></td>
   </tr>
 </template>
 
@@ -40,5 +42,6 @@
     <td>{{getDate nextService}}</td>
     <td>{{location}}</td>
     <td>{{count}}</td>
+    <td>{{unfinishedTodosCount}}</td>
   </tr>
 </template>

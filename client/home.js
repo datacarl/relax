@@ -48,3 +48,10 @@ Template.itemListItem.events({
     Router.go(Router.path('item', this));
   }
 });
+Template.itemListItem.helpers({
+  unfinishedTodosCount: function() {
+    return _.filter(this.todos, function(todo) {
+      return !todo.completedAt;
+    }).length;
+  },
+});
