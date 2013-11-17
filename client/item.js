@@ -14,7 +14,11 @@ Template.item.events({
         ];
 
     _.each(attrs, function(attr) {
-      item[attr] = tmpl.find('#' + attr).value;
+      var value = tmpl.find('#' + attr).value;
+      if (attr == 'nextService') {
+        value = value ? new Date(value) : null;
+      }
+      item[attr] = value;
     });
 
     if (data.item) {
@@ -51,11 +55,12 @@ Template.todo.events({
 Template.newTodo.events({
   'submit form': function(e, tmpl) {
     e.preventDefault();
+    var due = tmpl.find('.due').value;
     Items.update(Router.getData().item._id, {
       $push : {
         todos : {
           task: tmpl.find('.task').value,
-          due: tmpl.find('.due').value,
+          due: due ? new Date(due) : null,
         }
       }
     });
