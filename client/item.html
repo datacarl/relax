@@ -1,5 +1,4 @@
 <template name="item">
-  {{#isolate}}
   <h1>Description</h1>
   <form class="form-horizontal">
     <div class="form-group">
@@ -41,8 +40,7 @@
     <button type="submit" class="btn btn-primary pull-right">Save inventory</button>
   </form>
   <h1>Todos</h1>
-  {{/isolate}}
-  {{ yield 'todo' }}
+  {{> yield 'todo' }}
 </template>
 
 <template name="back">
