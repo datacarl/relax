@@ -83,5 +83,7 @@ Template.newConsumable.events({
 
     tmpl.find('#name').value = '';
     tmpl.find('#current-count').value = '';
+
+    tmpl.$('#name').focus();
   },
 });
