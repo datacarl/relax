@@ -5,4 +5,3 @@ Accounts.ui.config({
 Accounts.config({
   forbidClientAccountCreation: true,
 })
-

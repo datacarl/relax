@@ -48,10 +48,40 @@ Template.itemListItem.events({
     Router.go(Router.path('item', this));
   }
 });
+
 Template.itemListItem.helpers({
   unfinishedTodosCount: function() {
     return _.filter(this.todos, function(todo) {
       return !todo.completedAt;
     }).length;
+  }
+});
+
+Template.consumables.helpers({
+  consumables: function() {
+    return Consumables.find({}, {sort: {createdAt: -1}});
+  }
+});
+
+Template.consumable.events({
+  'click #archive': function() {
+    if (this.archivedAt)
+      Consumables.update(this._id, {$unset : {archivedAt: 1}});
+    else
+      Consumables.update(this._id, {$set : {archivedAt: new Date}});
+  }
+});
+
+Template.newConsumable.events({
+  'submit #new-consumable': function(e, tmpl) {
+    e.preventDefault();
+    Consumables.insert({
+      name: tmpl.find('#name').value,
+      currentCount: tmpl.find('#current-count').value,
+      createdAt: new Date,
+    })
+
+    tmpl.find('#name').value = '';
+    tmpl.find('#current-count').value = '';
   },
 });
